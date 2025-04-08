@@ -1,0 +1,7 @@
+#Versi yang digunakan
+version: "3.7"
+
+#aplikasi yang ada pada file compose ini
+services:
+
+ item-app:
