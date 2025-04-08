@@ -18,6 +18,9 @@ services:
     depends_on:
       - item-db
 
+    #selalu restart container jika mati
+    restart: always
+
   #app kedua sebagai database
   item-db:
   
@@ -27,6 +30,9 @@ services:
     #setup volume agar data persistent
     volumes:
       - app-db:/data/db
+
+    #selalu restart container jika mati
+    restart: always
 
 #list volume yang ada di file compose ini
 volumes:
