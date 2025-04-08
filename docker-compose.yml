@@ -4,4 +4,30 @@ version: "3.7"
 #aplikasi yang ada pada file compose ini
 services:
 
- item-app:
+  #app pertama sebagai frontend
+  item-app:
+    
+    #menggunakan image yang sudah di push ke repository
+    image: ghcr.io/ariellehug/a433-microservices/item-app:v1
+
+    #mapping port 80 ke port 8080
+    ports:
+      - 80:8080
+
+    #app run ketika app item-db sudah ready
+    depends_on:
+      - item-db
+
+  #app kedua sebagai database
+  item-db:
+  
+    #menggunakan image mongodb
+    image: mongo:3
+
+    #setup volume agar data persistent
+    volumes:
+      - app-db:/data/db
+
+#list volume yang ada di file compose ini
+volumes:
+  app-db:
