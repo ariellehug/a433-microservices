@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service  # Service shipping service
+metadata:
+  name: shipping-service
+  labels:
+    app: shipping-service  # Label untuk shipping service
+spec:
+  selector:
+    app: shipping-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001  # Port yang digunakan
+      name: http
