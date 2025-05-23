@@ -27,4 +27,4 @@ spec:
         - name: PORT
           value: "3000"
         - name: AMQP_URL   # Untuk connect ke rabbitmq
-          value: "amqp://user:MDXBXJZIfeGEQOsJ@rabbitmq.default.svc.cluster.local:5672"
+          value: "amqp://user:mDHRyyylcUxF8kzc@rabbitmq.default.svc.cluster.local:5672"
